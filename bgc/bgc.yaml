@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: bgc
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: blue
+  namespace: bgc
+spec:
+  containers:
+  - name: blue
+    image: aballen/blue
+    ports:
+    - containerPort: 80
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: green
+  namespace: bgc
+spec:
+  containers:
+  - name: green
+    image: aballen/blue
+    ports:
+    - containerPort: 80
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: canary
+  namespace: bgc
+spec:
+  containers:
+  - name: canary
+    image: aballen/canary
+    ports:
+    - containerPort: 80
