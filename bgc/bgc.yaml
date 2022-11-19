@@ -75,7 +75,7 @@ spec:
           emptyDir: {}
       containers:
         - name: green
-          image: 'aballen/green:1.0'
+          image: 'aballen/green:1.1'
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
@@ -126,7 +126,7 @@ spec:
           emptyDir: {}
       containers:
         - name: canary
-          image: 'aballen/canary:1.0'
+          image: 'aballen/canary:1.1'
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
