@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: blue
-          image: 'aballen/blue:1.0'
+          image: 'aballen/blue:1.1'
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
