@@ -1,13 +1,65 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: blue
+  labels:
+    app: blue
 spec:
-  containers:
-  - name: blue
-    image: aballen/blue
-    ports:
-    - containerPort: 80
+  selector:
+    matchLabels:
+      app: blue
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: blue
+    spec:
+      volumes:
+        - name: data
+          emptyDir: {}
+      containers:
+        - name: blue
+          image: 'aballen/blue:1.0'
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: HTTP
+              containerPort: 80
+              protocol: TCP
+          resources:
+            requests:
+              memory: 10m
+              cpu: '0.5'
+            limits:
+              memory: 100m
+              cpu: '1'
+          readinessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            httpGet:
+              host: ''
+              path: /index.html
+              port: 80
+              scheme: ''
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - web
+                topologyKey: kubernetes.io/hostname
+
 ---
 apiVersion: v1
 kind: Pod
