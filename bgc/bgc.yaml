@@ -24,8 +24,7 @@ spec:
           image: 'aballen/blue:1.0'
           imagePullPolicy: IfNotPresent
           ports:
-            - name: HTTP
-              containerPort: 80
+            - containerPort: 80
               protocol: TCP
           resources:
             requests:
@@ -37,8 +36,8 @@ spec:
           livenessProbe:
             tcpSocket:
               port: 80
-            initialDelaySeconds: 15
-            periodSeconds: 20             
+            initialDelaySeconds: 5
+            periodSeconds: 5            
           readinessProbe:
             failureThreshold: 3
             initialDelaySeconds: 5
