@@ -19,9 +19,6 @@ spec:
       labels:
         app: blue
     spec:
-      volumes:
-        - name: data
-          emptyDir: {}
       containers:
         - name: blue
           image: 'aballen/blue:1.0'
@@ -43,23 +40,8 @@ spec:
             periodSeconds: 10
             successThreshold: 1
             httpGet:
-              host: ''
               path: /index.html
               port: 80
-              scheme: ''
-      affinity:
-        podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 100
-              podAffinityTerm:
-                labelSelector:
-                  matchExpressions:
-                    - key: app
-                      operator: In
-                      values:
-                        - web
-                topologyKey: kubernetes.io/hostname
-
 ---
 apiVersion: v1
 kind: Pod
