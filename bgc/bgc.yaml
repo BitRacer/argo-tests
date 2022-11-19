@@ -19,6 +19,9 @@ spec:
       labels:
         app: blue
     spec:
+      volumes:
+        - name: data
+          emptyDir: {}
       containers:
         - name: blue
           image: 'aballen/blue:1.1'
@@ -47,6 +50,9 @@ spec:
       labels:
         app: green
     spec:
+      volumes:
+        - name: data
+          emptyDir: {}
       containers:
         - name: green
           image: 'aballen/green:1.0'
@@ -75,6 +81,9 @@ spec:
       labels:
         app: canary
     spec:
+      volumes:
+        - name: data
+          emptyDir: {}
       containers:
         - name: canary
           image: 'aballen/canary:1.0'
