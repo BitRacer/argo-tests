@@ -40,11 +40,11 @@ spec:
             httpGet:
               path: /index.html
               port: 80
-          livenessProbe:
-            tcpSocket:
-              port: 80
-            initialDelaySeconds: 1
-            periodSeconds: 5
+          # livenessProbe:
+          #   tcpSocket:
+          #     port: 80
+          #   initialDelaySeconds: 1
+          #   periodSeconds: 5
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -88,11 +88,11 @@ spec:
             httpGet:
               path: /index.html
               port: 80
-          livenessProbe:
-            tcpSocket:
-              port: 80
-            initialDelaySeconds: 1
-            periodSeconds: 5            
+          # livenessProbe:
+          #   tcpSocket:
+          #     port: 80
+          #   initialDelaySeconds: 1
+          #   periodSeconds: 5            
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -136,8 +136,8 @@ spec:
             httpGet:
               path: /index.html
               port: 80
-          livenessProbe:
-            tcpSocket:
-              port: 80
-            initialDelaySeconds: 1
-            periodSeconds: 5
+          # livenessProbe:
+          #   tcpSocket:
+          #     port: 80
+          #   initialDelaySeconds: 1
+          #   periodSeconds: 5
