@@ -30,7 +30,7 @@ spec:
               memory: 100m
               cpu: '0.5'
             limits:
-              memory: 200m
+              memory: 300m
               cpu: '1'
           readinessProbe:
             failureThreshold: 3
@@ -78,7 +78,7 @@ spec:
               memory: 100m
               cpu: '0.5'
             limits:
-              memory: 200m
+              memory: 300m
               cpu: '1'
           readinessProbe:
             failureThreshold: 3
@@ -126,7 +126,7 @@ spec:
               memory: 100m
               cpu: '0.5'
             limits:
-              memory: 200m
+              memory: 300m
               cpu: '1'
           readinessProbe:
             failureThreshold: 3
