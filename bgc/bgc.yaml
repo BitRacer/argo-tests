@@ -75,10 +75,10 @@ spec:
             - containerPort: 80
           resources:
             requests:
-              memory: 100m
-              cpu: '0.5'
+              memory: 50m
+              cpu: '1'
             limits:
-              memory: 300m
+              memory: 100m
               cpu: '1'
           readinessProbe:
             failureThreshold: 3
