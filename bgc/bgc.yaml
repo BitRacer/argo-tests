@@ -32,19 +32,19 @@ spec:
             limits:
               memory: 200m
               cpu: '1'
-          # readinessProbe:
-          #   failureThreshold: 3
-          #   initialDelaySeconds: 5
-          #   periodSeconds: 10
-          #   successThreshold: 1
-          #   httpGet:
-          #     path: /index.html
-          #     port: 80
-          # livenessProbe:
-          #   tcpSocket:
-          #     port: 80
-          #   initialDelaySeconds: 1
-          #   periodSeconds: 5
+          readinessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            httpGet:
+              path: /index.html
+              port: 80
+          livenessProbe:
+            tcpSocket:
+              port: 80
+            initialDelaySeconds: 1
+            periodSeconds: 5
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -80,19 +80,19 @@ spec:
             limits:
               memory: 200m
               cpu: '1'
-          # readinessProbe:
-          #   failureThreshold: 3
-          #   initialDelaySeconds: 5
-          #   periodSeconds: 10
-          #   successThreshold: 1
-          #   httpGet:
-          #     path: /index.html
-          #     port: 80
-          # livenessProbe:
-          #   tcpSocket:
-          #     port: 80
-          #   initialDelaySeconds: 1
-          #   periodSeconds: 5            
+          readinessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            httpGet:
+              path: /index.html
+              port: 80
+          livenessProbe:
+            tcpSocket:
+              port: 80
+            initialDelaySeconds: 1
+            periodSeconds: 5            
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -128,16 +128,16 @@ spec:
             limits:
               memory: 200m
               cpu: '1'
-          # readinessProbe:
-          #   failureThreshold: 3
-          #   initialDelaySeconds: 5
-          #   periodSeconds: 10
-          #   successThreshold: 1
-          #   httpGet:
-          #     path: /index.html
-          #     port: 80
-          # livenessProbe:
-          #   tcpSocket:
-          #     port: 80
-          #   initialDelaySeconds: 1
-          #   periodSeconds: 5
+          readinessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            httpGet:
+              path: /index.html
+              port: 80
+          livenessProbe:
+            tcpSocket:
+              port: 80
+            initialDelaySeconds: 1
+            periodSeconds: 5
